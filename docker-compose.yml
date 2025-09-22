@@ -21,5 +21,4 @@ services:
       - ./serverdata/usercache.json:/server/usercache.json
       - ./serverdata/whitelist.json:/server/whitelist.json
       # Cache
-      - ./cache/libraries:/server/libraries
       - ./cache/versions:/server/versions
