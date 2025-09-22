@@ -6,8 +6,7 @@ RUN apk add --no-cache eudev-dev
 
 WORKDIR /server
 
-RUN curl -o server-install.jar -L https://maven.neoforged.net/releases/net/neoforged/neoforge/21.8.47/neoforge-21.8.47-installer.jar
-
+RUN curl -o server-install.jar -L https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.209/neoforge-21.1.209-installer.jar
 RUN java -jar server-install.jar
 RUN rm server-install.jar
 
