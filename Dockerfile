@@ -1,8 +1,11 @@
-FROM alpine:latest
+FROM debian:trixie
 
-RUN apk add --no-cache openjdk21-jre-headless
-RUN apk add --no-cache curl
-RUN apk add --no-cache eudev-dev
+RUN apt-get update
+RUN apt-get install -y\
+    curl
+
+RUN curl -O https://cdn.azul.com/zulu/bin/zulu21.48.15-ca-jre21.0.10-linux_amd64.deb
+RUN apt-get install -y ./zulu21.48.15-ca-jre21.0.10-linux_amd64.deb
 
 WORKDIR /server
 
@@ -15,4 +18,4 @@ RUN chmod +x /server/server_start.sh
 
 EXPOSE 25565
 
-CMD ["/server/server_start.sh"]
+CMD ["./server_start.sh"]
